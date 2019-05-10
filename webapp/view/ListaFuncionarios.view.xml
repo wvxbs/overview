@@ -1,7 +1,7 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.overview.controller.ListaFuncionarios" xmlns="sap.m">
     <Page title="Lista Funcionários" showHeader="false" showFooter="false" showNavButton="false">
         <content>
-            <List mode="SingleSelectMaster" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true">
+            <List mode="SingleSelectMaster" width="100%" headerText="Funcionários" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true">
                 <infoToolbar>
                     <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
                         <content>
@@ -9,25 +9,13 @@
                         </content>
                     </Toolbar>
                 </infoToolbar>
-                <headerToolbar>
-                    <Toolbar enabled="true" visible="true" width="" design="Solid">
-                        <content>
-                            <SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
-                        </content>
-                    </Toolbar>
-                </headerToolbar>
+                <headerToolbar />
                 <items>
-                    <ObjectListItem intro="Intro." title="Item 1" number="1,000" numberUnit="USD" numberState="None" type="Active" selected="true" showMarkers="false">
+                    <ObjectListItem intro="id" title="Item 1" number="employee_salary" numberUnit="Salário" numberState="None" type="Active" selected="true" showMarkers="false">
                         <attributes>
-                            <ObjectAttribute text="Attribute 1" active="false" visible="true"/>
-                            <ObjectAttribute text="Attribute 2" active="false" visible="true"/>
+                            <ObjectAttribute text="employee_name 1" active="false" visible="true"/>
+                            <ObjectAttribute text="employee_age" active="false" visible="true"/>
                         </attributes>
-                        <firstStatus>
-                            <ObjectStatus text="Status 1" state="None" visible="true"/>
-                        </firstStatus>
-                        <secondStatus>
-                            <ObjectStatus text="Status 2" state="None" visible="true"/>
-                        </secondStatus>
                     </ObjectListItem>
                 </items>
             </List>
