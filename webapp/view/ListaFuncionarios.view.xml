@@ -1,7 +1,7 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.overview.controller.ListaFuncionarios" xmlns="sap.m">
     <Page title="Lista Funcionários" showHeader="false" showFooter="false" showNavButton="false">
         <content>
-            <List mode="SingleSelectMaster" width="100%" headerText="Funcionários" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true">
+            <List id="employeeesTable" mode="SingleSelectMaster" width="100%" headerText="Funcionários" footerText="" backgroundDesign="Solid" showSeparators="False" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true">
                 <infoToolbar>
                     <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
                         <content>
