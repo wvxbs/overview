@@ -137,13 +137,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			$.ajax({
 				type: "GET",
 				contentType: "application/json",
-				url: "employees/api/v2/employees",
+				url: "/employees/api/v2/employees",
 				dataType: "json",
 				async: false,
 				success: function (data) {
-					oData = data
+					oData = data;
 				}
-			})
+			});
 
 			var oModel = new JSONModel(oData);
 			var oList = this.getView().byId("employeesTable");

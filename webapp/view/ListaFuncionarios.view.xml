@@ -12,10 +12,9 @@
 				</infoToolbar>
 				<headerToolbar/>
 				<items>
-					<ObjectListItem intro="{id}" title="Item 1" number="{employee_salary}" numberUnit="Salário" numberState="None" type="Active" selected="true"
-						showMarkers="false">
+					<ObjectListItem intro="{id}" title="{employee_name}" number="{employee_salary}" numberUnit="Salário" numberState="None" type="Active"
+						selected="true">
 						<attributes>
-							<ObjectAttribute text="{employee_name}" active="false" visible="true"/>
 							<ObjectAttribute text="{employee_age}" active="false" visible="true"/>
 						</attributes>
 					</ObjectListItem>
