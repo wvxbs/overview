@@ -8,7 +8,7 @@
                 <content>
                     <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
                         <items>
-                            <chart:Chart id="sap_Responsive_Page_0-content-sap_m_Panel-1554912011777-content-sap_m_HBox-1554912168868-items-sap_chart_CombinedChart-1554912733512" width="1166.90625px" height="350px" visibleDimensions="__id" visibleMeasures="mea0,mea1" chartType="combination" vizProperties="{staticDataModel>/sap_Responsive_Page_0-content-sap_m_Panel-1554912011777-content-sap_m_HBox-1554912168868-items-sap_chart_CombinedChart-1554912733512/vizProperties}" uiConfig="{}">
+                            <chart:Chart id="chart" width="1166.90625px" height="350px" visibleDimensions="__id" visibleMeasures="mea0,mea1" chartType="combination" vizProperties="{staticDataModel>/chart/vizProperties}" uiConfig="{}">
                                 <chart:dimensions>
                                     <data:Dimension name="__id" label="ID" role="category" textProperty="dim0"/>
                                 </chart:dimensions>
