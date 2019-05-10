@@ -153,7 +153,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			oData["chart"] = {};
 
-			oData["chart"]["data"] = [{
+			/*oData["chart"]["data"] = [{
 				"dim0": "India",
 				"mea0": "296",
 				"mea1": "220",
@@ -178,7 +178,20 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				"mea0": "350",
 				"mea1": "200",
 				"__id": 4
-			}];
+			}];*/
+
+			var oData;
+
+			$.ajax({
+				type: "GET",
+				contentType: "application/json",
+				url: "/employees/api/v2/employees",
+				dataType: "json",
+				async: false,
+				success: function (data) {
+					oData = data;
+				}
+			});
 
 			self.oBindingParameters['chart'] = {
 				"path": "/chart/data",

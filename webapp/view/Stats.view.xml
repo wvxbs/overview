@@ -10,11 +10,11 @@
                         <items>
                             <chart:Chart id="chart" width="1166.90625px" height="350px" visibleDimensions="__id" visibleMeasures="mea0,mea1" chartType="combination" vizProperties="{staticDataModel>/chart/vizProperties}" uiConfig="{}">
                                 <chart:dimensions>
-                                    <data:Dimension name="__id" label="ID" role="category" textProperty="dim0"/>
+                                    <data:Dimension name="__id" label="ID" role="category" textProperty="employee_name"/>
                                 </chart:dimensions>
                                 <chart:measures>
-                                    <data:Measure name="mea0" label="Idade" role="axis2"/>
-                                    <data:Measure name="mea1" label="Salário" role="axis2"/>
+                                    <data:Measure name="employee_age" label="Idade" role="axis2"/>
+                                    <data:Measure name="employee_salary" label="Salário" role="axis2"/>
                                 </chart:measures>
                             </chart:Chart>
                         </items>
