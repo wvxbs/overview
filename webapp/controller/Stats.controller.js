@@ -151,9 +151,9 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			oView.setModel(oModel, "staticDataModel");
 			self.oBindingParameters = {};
 
-			oData["sap_Responsive_Page_0-content-sap_m_Panel-1554912011777-content-sap_m_HBox-1554912168868-items-sap_chart_CombinedChart-1554912733512"] = {};
+			oData["chart"] = {};
 
-			oData["sap_Responsive_Page_0-content-sap_m_Panel-1554912011777-content-sap_m_HBox-1554912168868-items-sap_chart_CombinedChart-1554912733512"]["data"] = [{
+			oData["chart"]["data"] = [{
 				"dim0": "India",
 				"mea0": "296",
 				"mea1": "220",
@@ -180,13 +180,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				"__id": 4
 			}];
 
-			self.oBindingParameters['sap_Responsive_Page_0-content-sap_m_Panel-1554912011777-content-sap_m_HBox-1554912168868-items-sap_chart_CombinedChart-1554912733512'] = {
-				"path": "/sap_Responsive_Page_0-content-sap_m_Panel-1554912011777-content-sap_m_HBox-1554912168868-items-sap_chart_CombinedChart-1554912733512/data",
+			self.oBindingParameters['chart'] = {
+				"path": "/chart/data",
 				"model": "staticDataModel",
 				"parameters": {}
 			};
 
-			oData["sap_Responsive_Page_0-content-sap_m_Panel-1554912011777-content-sap_m_HBox-1554912168868-items-sap_chart_CombinedChart-1554912733512"]["vizProperties"] = {
+			oData["chart"]["vizProperties"] = {
 				"plotArea": {
 					"dataLabel": {
 						"visible": true,
@@ -208,7 +208,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				return oValueToFormat;
 			}
 
-			var aDimensions = oView.byId("sap_Responsive_Page_0-content-sap_m_Panel-1554912011777-content-sap_m_HBox-1554912168868-items-sap_chart_CombinedChart-1554912733512").getDimensions();
+			var aDimensions = oView.byId("chart").getDimensions();
 			aDimensions.forEach(function(oDimension) {
 				oDimension.setTextFormatter(dateDimensionFormatter);
 			});
@@ -221,8 +221,8 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				oBindingParameters = this.oBindingParameters,
 				oView = this.getView();
 
-			oChart = oView.byId("sap_Responsive_Page_0-content-sap_m_Panel-1554912011777-content-sap_m_HBox-1554912168868-items-sap_chart_CombinedChart-1554912733512");
-			oChart.bindData(oBindingParameters['sap_Responsive_Page_0-content-sap_m_Panel-1554912011777-content-sap_m_HBox-1554912168868-items-sap_chart_CombinedChart-1554912733512']);
+			oChart = oView.byId("chart");
+			oChart.bindData(oBindingParameters['chart']);
 
 		}
 	});
