@@ -9,8 +9,7 @@
 			<Panel height="auto" width="auto" headerText="Idade" expandable="true" expanded="true" expandAnimation="true" backgroundDesign="Transparent"
 				class="sapUiResponsiveMargin sapUiResponsiveContentPadding">
 				<content>
-					<FlexBox fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div"
-						visible="true" displayInline="false">
+					<FlexBox fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
 						<items>
 							<chart:Chart id="chart" width="1166.90625px" height="350px" visibleDimensions="id" visibleMeasures="mea0,mea1" chartType="combination"
 								vizProperties="{staticDataModel>/chart/vizProperties}" uiConfig="{}">
