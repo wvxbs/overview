@@ -1,0 +1,58 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.overview.controller.OverviewFuncionarios" xmlns="sap.m" xmlns:f="sap.f">
+    <Page title="Overview" showHeader="true" showFooter="false" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+        <content>
+            <Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+            <FormattedText htmlText="&lt;h1 style=&quot;font-size:40px&quot;>&lt;strong/>Informações&lt;/strong>&lt;/h1>" width="auto" visible="true" class="sapUiResponsiveMargin"/>
+            <HBox alignItems="Stretch" direction="Row" fitContainer="true" width="auto" height="auto" justifyContent="Center" renderType="Div" visible="true" displayInline="false">
+                <items>
+                    <f:Avatar src="" initials="GF" displayShape="Circle" displaySize="M" imageFitType="Cover"/>
+                    <FormattedText htmlText="&lt;h1>Gabriel Ferreira&lt;/h1>" width="auto" height="auto" visible="true" class="sapUiResponsiveMargin"/>
+                </items>
+                <layoutData/>
+            </HBox>
+            <Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+            <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Center" renderType="Div" visible="true" displayInline="false">
+                <items>
+                    <GenericTile header="ID" subheader="" frameType="OneByOne" class="sapUiResponsiveMargin">
+                        <tileContent>
+                            <TileContent footer="" unit="">
+                                <content>
+                                    <NumericContent value="999" valueColor="Neutral" indicator="None" icon="sap-icon://activity-individual"/>
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile header="Salário" subheader="" frameType="OneByOne" class="sapUiResponsiveMargin">
+                        <tileContent>
+                            <TileContent footer="" unit="">
+                                <content>
+                                    <NumericContent value="200" valueColor="Neutral" indicator="None" icon="sap-icon://money-bills"/>
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile header="Idade" subheader="" frameType="OneByOne" class="sapUiResponsiveMargin">
+                        <tileContent>
+                            <TileContent footer="" unit="">
+                                <content>
+                                    <NumericContent value="17" valueColor="Neutral" indicator="None" icon="sap-icon://competitor"/>
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                </items>
+                <layoutData/>
+            </HBox>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+                <content>
+                    <ToolbarSpacer width=""/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        <headerContent/>
+    </Page>
+</mvc:View>

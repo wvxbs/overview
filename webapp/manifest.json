@@ -1,0 +1,159 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "com.sap.build.standard.overview",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.2.2"
+		},
+		"ach": "ach",
+		"resources": "resources.json",
+		"dataSources": {},
+		"sourceTemplate": {
+			"id": "sap.ui.ui5-template-plugin.2masterdetail",
+			"version": "1.32.5"
+		}
+	},
+	"sap.fiori": {
+		"_version": "1.1.0",
+		"registrationIds": [],
+		"archeType": "transactional"
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://detail-view",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"_version": "1.3.0",
+		"rootView": {
+			"viewName": "com.sap.build.standard.overview.view.App",
+			"type": "XML",
+			"async": false,
+			"id": "app"
+		},
+		"autoPrefixId": true,
+		"dependencies": {
+			"minUI5Version": "1.50.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.sap.build.standard.overview.view",
+				"controlId": "idAppControl",
+				"clearTarget": false,
+				"controlAggregation": "detailPages",
+				"async": false,
+				"bypassed": {
+					"target": [
+						"Launcher",
+						"ListaFuncionarios"
+					]
+				}
+			},
+			"targets": {
+				"Launcher": {
+					"controlAggregation": "detailPages",
+					"viewName": "Launcher",
+					"viewId": "Launcher",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"ListaFuncionarios": {
+					"controlAggregation": "masterPages",
+					"viewName": "ListaFuncionarios",
+					"viewId": "ListaFuncionarios",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"OverviewFuncionarios": {
+					"controlAggregation": "detailPages",
+					"viewName": "OverviewFuncionarios",
+					"viewId": "OverviewFuncionarios",
+					"viewLevel": 3,
+					"transition": "slide"
+				},
+				"Stats": {
+					"controlAggregation": "detailPages",
+					"viewName": "Stats",
+					"viewId": "Stats",
+					"viewLevel": 2,
+					"transition": "slide"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "ListaFuncionarios/Launcher",
+					"name": "Launcher",
+					"target": [
+						"ListaFuncionarios",
+						"Launcher"
+					]
+				},
+				{
+					"pattern": "ListaFuncionarios",
+					"name": "ListaFuncionarios",
+					"target": [
+						"Launcher",
+						"ListaFuncionarios"
+					]
+				},
+				{
+					"pattern": "ListaFuncionarios/OverviewFuncionarios",
+					"name": "OverviewFuncionarios",
+					"target": [
+						"ListaFuncionarios",
+						"OverviewFuncionarios"
+					]
+				},
+				{
+					"pattern": "ListaFuncionarios/Stats",
+					"name": "Stats",
+					"target": [
+						"ListaFuncionarios",
+						"Stats"
+					]
+				},
+				{
+					"pattern": "",
+					"name": "default",
+					"target": [
+						"Launcher",
+						"ListaFuncionarios"
+					]
+				}
+			]
+		}
+	}
+}

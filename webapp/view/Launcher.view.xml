@@ -1,0 +1,47 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.overview.controller.Launcher" xmlns="sap.m" xmlns:microchart="sap.suite.ui.microchart">
+    <Page showHeader="false" title="Launcher" showFooter="false" showNavButton="false">
+        <content>
+            <Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+            <FormattedText htmlText="&lt;h1 style=&quot;font-size:40px&quot;>Bem vindo a &lt;strong>Overview&lt;/strong>&lt;/h1>" width="auto" height="111.859375px" visible="true" class="sapUiResponsiveMargin"/>
+            <HBox alignItems="Center" direction="Row" fitContainer="true" width="auto" height="auto" justifyContent="Center" renderType="Div" visible="true" displayInline="false">
+                <items>
+                    <GenericTile header="Lista funcionários" subheader="Informações pessoais de cada funcionário" frameType="TwoByOne" class="sapUiResponsiveMargin" press="_onGenericTilePress">
+                        <tileContent>
+                            <TileContent footer="" unit="">
+                                <content>
+                                    <NumericContent value="200" valueColor="Neutral" indicator="None" icon="sap-icon://personnel-view"/>
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                    <GenericTile header="Estatisticas" subheader="Análise de padrões" frameType="TwoByOne" class="sapUiResponsiveMargin" press="_onGenericTilePress1">
+                        <tileContent>
+                            <TileContent footer="" unit="">
+                                <content>
+                                    <microchart:HarveyBallMicroChart total="100" formattedLabel="true" size="L" width="144px" totalLabel="" totalScale="" showTotal="true" showFractions="true" class="sapUiTinyMargin">
+                                        <microchart:items>
+                                            <microchart:HarveyBallMicroChartItem color="Good" fraction="40" fractionLabel="" formattedLabel="false" fractionScale="%"/>
+                                        </microchart:items>
+                                    </microchart:HarveyBallMicroChart>
+                                </content>
+                            </TileContent>
+                        </tileContent>
+                    </GenericTile>
+                </items>
+                <layoutData/>
+            </HBox>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+                <content>
+                    <ToolbarSpacer width=""/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

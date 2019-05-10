@@ -1,0 +1,16 @@
+{
+    "dataBinding": {
+        "/webapp/view/Launcher.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/ListaFuncionarios.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/OverviewFuncionarios.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Stats.view.xml": {
+            "entitySet": ""
+        } 
+    }
+}
