@@ -2,11 +2,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 	"sap/m/MessageBox",
 	"./utilities",
 	"sap/ui/core/routing/History"
-], function(BaseController, MessageBox, Utilities, History) {
+], function (BaseController, MessageBox, Utilities, History) {
 	"use strict";
 
 	return BaseController.extend("com.sap.build.standard.overview.controller.Stats", {
-		handleRouteMatched: function(oEvent) {
+		handleRouteMatched: function (oEvent) {
 			var sAppId = "App5cac949efdab09167c989397";
 
 			var oParams = {};
@@ -19,7 +19,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 
 			} else {
 				if (this.getOwnerComponent().getComponentData()) {
-					var patternConvert = function(oParam) {
+					var patternConvert = function (oParam) {
 						if (Object.keys(oParam).length !== 0) {
 							for (var prop in oParam) {
 								if (prop !== "sourcePrototype") {
@@ -45,7 +45,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 		},
-		_onPageNavButtonPress: function() {
+		_onPageNavButtonPress: function () {
 			var oHistory = History.getInstance();
 			var sPreviousHash = oHistory.getPreviousHash();
 			var oQueryParams = this.getQueryParameters(window.location);
@@ -58,7 +58,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 		},
-		getQueryParameters: function(oLocation) {
+		getQueryParameters: function (oLocation) {
 			var oQuery = {};
 			var aParams = oLocation.search.substring(1).split("&");
 			for (var i = 0; i < aParams.length; i++) {
@@ -68,7 +68,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			return oQuery;
 
 		},
-		applyFiltersAndSorters: function(sControlId, sAggregationName, chartBindingInfo) {
+		applyFiltersAndSorters: function (sControlId, sAggregationName, chartBindingInfo) {
 			if (chartBindingInfo) {
 				var oBindingInfo = chartBindingInfo;
 			} else {
@@ -86,7 +86,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			});
 
 		},
-		updateBindingOptions: function(sCollectionId, oBindingData, sSourceId) {
+		updateBindingOptions: function (sCollectionId, oBindingData, sSourceId) {
 			this.mBindingOptions = this.mBindingOptions || {};
 			this.mBindingOptions[sCollectionId] = this.mBindingOptions[sCollectionId] || {};
 
@@ -126,17 +126,17 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			};
 
 		},
-		onInit: function() {
+		onInit: function () {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("Stats").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
 			var oView = this.getView();
 			oView.addEventDelegate({
-				onBeforeShow: function() {
+				onBeforeShow: function () {
 					if (sap.ui.Device.system.phone) {
 						var oPage = oView.getContent()[0];
 						if (oPage.getShowNavButton && !oPage.getShowNavButton()) {
 							oPage.setShowNavButton(true);
-							oPage.attachNavButtonPress(function() {
+							oPage.attachNavButtonPress(function () {
 								this.oRouter.navTo("Launcher", {}, true);
 							}.bind(this));
 						}
@@ -223,12 +223,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 			var aDimensions = oView.byId("chart").getDimensions();
-			aDimensions.forEach(function(oDimension) {
+			aDimensions.forEach(function (oDimension) {
 				oDimension.setTextFormatter(dateDimensionFormatter);
 			});
 
 		},
-		onAfterRendering: function() {
+		onAfterRendering: function () {
 
 			var oChart,
 				self = this,
