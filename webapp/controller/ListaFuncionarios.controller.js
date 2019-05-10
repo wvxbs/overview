@@ -146,7 +146,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			})
 
 			var oModel = new JSONModel(oData);
-			var oList = this.byId("employeesTable");
+			var oList = this.getView().byId("employeesTable");
 			oList.setModel(oModel);
 
 		}
