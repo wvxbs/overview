@@ -1,37 +1,33 @@
 {
 	"welcomeFile": "webapp/test/testFLPService.html",
-	"routes": [
-		{
-			"path": "/resources",
-			"target": {
-				"type": "service",
-				"name": "sapui5",
-				"version": "1.58.4",
-				"preferLocal": true,
-				"entryPath": "/resources"
-			},
-			"description": "SAPUI5 Resources"
+	"routes": [{
+		"path": "/resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"version": "1.58.4",
+			"preferLocal": true,
+			"entryPath": "/resources"
 		},
-		{
-			"path": "/test-resources",
-			"target": {
-				"type": "service",
-				"version": "1.58.4",
-				"name": "sapui5",
-				"entryPath": "/test-resources"
-			},
-			"description": "SAPUI5 Test Resources"
+		"description": "SAPUI5 Resources"
+	}, {
+		"path": "/test-resources",
+		"target": {
+			"type": "service",
+			"version": "1.58.4",
+			"name": "sapui5",
+			"entryPath": "/test-resources"
 		},
-		{
-			"path": "/employees",
-			"target": {
-				"type": "destinatine",
-				"name": "employeesApi",
-				"entryPath": "/"
-			},
-			"description": "Employees Data"
-		}
-	],
+		"description": "SAPUI5 Test Resources"
+	}, {
+		"path": "/employees",
+		"target": {
+			"type": "destination",
+			"name": "employeesApi",
+			"entryPath": "/"
+		},
+		"description": "Employees Data"
+	}],
 	"authenticationMethod": "none",
 	"sendWelcomeFileRedirect": true
 }
