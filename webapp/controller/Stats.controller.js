@@ -193,6 +193,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				}
 			});
 
+
 			self.oBindingParameters['chart'] = {
 				"path": "/chart/data",
 				"model": "staticDataModel",
