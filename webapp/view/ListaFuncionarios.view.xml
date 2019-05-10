@@ -1,7 +1,7 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.overview.controller.ListaFuncionarios" xmlns="sap.m">
     <Page title="Lista Funcionários" showHeader="false" showFooter="false" showNavButton="false">
         <content>
-            <List id="employeeesTable" mode="SingleSelectMaster" width="100%" headerText="Funcionários" footerText="" backgroundDesign="Solid" showSeparators="False" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true">
+            <List id="employeeesTable" mode="SingleSelectMaster" width="100%" headerText="Funcionários" footerText="" backgroundDesign="Solid" showSeparators="False" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true" items="{path: '/'}">
                 <infoToolbar>
                     <Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
                         <content>
@@ -11,10 +11,10 @@
                 </infoToolbar>
                 <headerToolbar />
                 <items>
-                    <ObjectListItem intro="id" title="Item 1" number="employee_salary" numberUnit="Salário" numberState="None" type="Active" selected="true" showMarkers="false">
+                    <ObjectListItem intro="{id}" title="Item 1" number="{employee_salary}" numberUnit="Salário" numberState="None" type="Active" selected="true" showMarkers="false">
                         <attributes>
-                            <ObjectAttribute text="employee_name" active="false" visible="true"/>
-                            <ObjectAttribute text="employee_age" active="false" visible="true"/>
+                            <ObjectAttribute text="{employee_name}" active="false" visible="true"/>
+                            <ObjectAttribute text="{employee_age}" active="false" visible="true"/>
                         </attributes>
                     </ObjectListItem>
                 </items>
