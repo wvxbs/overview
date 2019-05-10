@@ -126,9 +126,27 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			}
 
 		},
+
 		onInit: function() {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			this.oRouter.getTarget("ListaFuncionarios").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
+			this.oRouter.getTarget(	"ListaFuncionarios").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
+
+			var oData;
+
+			$.ajax({
+				type : "GET",
+				contentType : "application/json",
+				url : "employees/api/v2/employees",
+				dataType : "json",
+				async: false, 
+				success : function (data) {
+					oData = data
+				}
+			})
+
+			var oModel = new JSONModel(oData);
+			var oList = this.byId("tabela1");
+			oList.setModel(oModel);
 
 		}
 	});

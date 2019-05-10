@@ -21,6 +21,15 @@
 				"entryPath": "/test-resources"
 			},
 			"description": "SAPUI5 Test Resources"
+		},
+		{
+			"path": "/employees",
+			"target": {
+				"type": "destinatine",
+				"name": "employeesApi",
+				"entryPath": "/"
+			},
+			"description": "Employees Data"
 		}
 	],
 	"authenticationMethod": "none",
