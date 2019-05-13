@@ -145,7 +145,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				}.bind(this)
 			});
 
-			
+			var oData = {},
+				self = this;
+			var oModel = new sap.ui.model.json.JSONModel();
+			oChart.setModel(oModel, "jsonDataModel");
+			self.oBindingParameters = {};
 
 			oData["chart"] = {};
 			/*oData["chart"]["data"] = [{
