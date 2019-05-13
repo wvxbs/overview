@@ -98,7 +98,6 @@
 					"transition": "slide"
 				},
 				"OverviewFuncionarios": {
-					"controlAggregation": "detailPages",
 					"viewName": "OverviewFuncionarios",
 					"viewId": "OverviewFuncionarios",
 					"viewLevel": 3,
@@ -118,7 +117,7 @@
 					"name": "Launcher",
 					"target": [
 						"ListaFuncionarios",
-						"Launcher"
+						"Launcher"	
 					]
 				},
 				{

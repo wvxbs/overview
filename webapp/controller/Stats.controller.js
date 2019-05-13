@@ -129,11 +129,12 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		onInit: function () {
 			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			this.oRouter.getTarget("Stats").attachDisplay(jQuery.proxy(this.handleRouteMatched, this));
-			var oView = this.getView();
-			oView.addEventDelegate({
+			var oChart = this.getView().byId("employeesChart");
+
+			oChart.addEventDelegate({
 				onBeforeShow: function () {
 					if (sap.ui.Device.system.phone) {
-						var oPage = oView.getContent()[0];
+						var oPage = oChart.getContent()[0];
 						if (oPage.getShowNavButton && !oPage.getShowNavButton()) {
 							oPage.setShowNavButton(true);
 							oPage.attachNavButtonPress(function () {
@@ -144,15 +145,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				}.bind(this)
 			});
 
-			var oView = this.getView(),
-				oData = {},
+			var oData = {},
 				self = this;
 			var oModel = new sap.ui.model.json.JSONModel();
-			oView.setModel(oModel, "staticDataModel");
+			oChart.setModel(oModel, "jsonDataModel");
 			self.oBindingParameters = {};
 
 			oData["chart"] = {};
-
 			/*oData["chart"]["data"] = [{
 				"dim0": "India",
 				"mea0": "296",
@@ -180,8 +179,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				"__id": 4
 			}];*/
 
-			var oData;
-
 			$.ajax({
 				type: "GET",
 				contentType: "application/json",
@@ -189,27 +186,17 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				dataType: "json",
 				async: false,
 				success: function (data) {
-					oData = data;
+					oData["chart"]["data"] = JSON.parse(data);
 				}
 			});
 
-
-			self.oBindingParameters['chart'] = {
-				"path": "/chart/data",
-				"model": "staticDataModel",
+			self.oBindingParameters["chart"] = {
+				"path": "/",
+				"model": "jsonDataModel",
 				"parameters": {}
 			};
 
-			oData["chart"]["vizProperties"] = {
-				"plotArea": {
-					"dataLabel": {
-						"visible": true,
-						"hideWhenOverlap": true
-					}
-				}
-			};
-
-			oView.getModel("staticDataModel").setData(oData, true);
+			oChart.getModel("jsonDataModel").setData(oData, true);
 
 			function dateDimensionFormatter(oDimensionValue, sTextValue) {
 				var oValueToFormat = sTextValue !== undefined ? sTextValue : oDimensionValue;
@@ -222,20 +209,16 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 				return oValueToFormat;
 			}
 
-			var aDimensions = oView.byId("chart").getDimensions();
+			var aDimensions = oChart().getDimensions();
 			aDimensions.forEach(function (oDimension) {
 				oDimension.setTextFormatter(dateDimensionFormatter);
 			});
-
 		},
+
 		onAfterRendering: function () {
-
-			var oChart,
-				self = this,
-				oBindingParameters = this.oBindingParameters,
-				oView = this.getView();
-
-			oChart = oView.byId("chart");
+			var oChart = this.getView().byId("employeesChart");
+			var self = this;
+			var oBindingParameters = this.oBindingParameters;
 			oChart.bindData(oBindingParameters['chart']);
 
 		}

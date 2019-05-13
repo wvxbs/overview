@@ -11,8 +11,8 @@
 				<content>
 					<FlexBox fitContainer="false" width="100%" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
 						<items>
-							<chart:Chart id="chart" width="1166.90625px" height="350px" visibleDimensions="id" visibleMeasures="mea0,mea1" chartType="combination"
-								vizProperties="{staticDataModel>/chart/vizProperties}" uiConfig="{}">
+							<chart:Chart id="employeesChart" width="1166.90625px" height="350px" visibleDimensions="id" visibleMeasures="mea0,mea1"
+								chartType="combination" vizProperties="{staticDataModel>/chart/vizProperties}" uiConfig="{}">
 								<chart:dimensions>
 									<data:Dimension name="id" label="ID" role="category" textProperty="employee_name"/>
 								</chart:dimensions>

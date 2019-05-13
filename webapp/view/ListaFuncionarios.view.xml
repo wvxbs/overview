@@ -1,8 +1,7 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.overview.controller.ListaFuncionarios" xmlns="sap.m">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.sap.build.standard.overview.controller.ListaFuncionarios">
 	<Page title="Lista Funcionários" showHeader="false" showFooter="false" showNavButton="false">
 		<content>
-			<List id="employeesTable" mode="SingleSelectMaster" width="100%" headerText="Funcionários" footerText="" backgroundDesign="Solid"
-				showSeparators="None" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true" items="{path: '/'}">
+			<List id="employeesTable" mode="SingleSelectMaster" width="100%" headerText="Funcionários" footerText="" backgroundDesign="Solid" showSeparators="None" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true" items="{path: '/'}">
 				<infoToolbar>
 					<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 						<content>
@@ -12,8 +11,7 @@
 				</infoToolbar>
 				<headerToolbar/>
 				<items>
-					<ObjectListItem intro="{id}" title="{employee_name}" number="{employee_salary}" numberUnit="Salário" numberState="None" type="Active"
-						selected="true">
+					<ObjectListItem intro="{id}" title="{employee_name}" number="{employee_salary}" numberUnit="Salário" numberState="None" type="Active" selected="true" detailPress="action" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" action:wiring="\{'detailPress':\{'navigation':\{'routeName':'OverviewFuncionarios'\}\}\}">
 						<attributes>
 							<ObjectAttribute text="{employee_age}" active="false" visible="true"/>
 						</attributes>
